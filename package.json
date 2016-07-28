@@ -1,0 +1,15 @@
+{
+  "name": "intern-tutorial",
+  "version": "3.0.0",
+  "description": "Intern tutorial. Learn how to use Intern by following this tutorial!",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theintern/intern-tutorial.git"
+  },
+  "license": "BSD-3-Clause",
+  "bugs": "https://github.com/theintern/intern-tutorial/issues",
+  "homepage": "http://theintern.io/",
+  "devDependencies": {
+    "intern": "^3.2.3"
+  }
+}
