@@ -76,3 +76,7 @@ project_root/
                   (custom interfaces, reporters, mocks, etc.)
     unit/       – Unit tests
     intern.js   – Intern configuration
+
+-----
+http://stackoverflow.com/questions/27850786/how-do-i-take-a-screenshot-when-a-test-in-internjs-fails
+http://www.clock.co.uk/blog/tools-for-unit-testing-and-quality-assurance-in-node-js
