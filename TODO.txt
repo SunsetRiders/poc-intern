@@ -1,0 +1,78 @@
+- Não implementa o "BDD" style de "describe, it" e sim um "registerSuite" como se fosse um objeto javascript
+# IMPLEMENTA BDD/TDD SIM!
+  https://theintern.github.io/intern/#interface-overview
+
+- Não mostra os blocos de teste sendo executados(mesmo com o assert) [vide exemplo da atividade "Sweng X intern-poc"]
+- Lento, mas não sei se é por causa do Tunnel utilizado (browserstack)
+
+
+
+
+TODO:
+- INTERFACES #TDD E #BDD
+  - SE EU UTILIZAR AS INTERFACES DE #TDD E #BDD, PRECISO ESPECIFICAR AS SUITES DE TESTE NO ARQUIVO DE CONFIGURAÇÃO?
+- QUAL QUE É A DO TUNNEL ?
+- O QUE SÃO ESSES REPORTS
+  - SÓ DÁ PRA USAR PELA LINHA DE COMANDO OU NO CONFIGURATION FILE TAMBÉM?
+- COMO UTILIZAR "Page objects" ?
+
+
+# TUNNEL
+  - ESPECIFICA QUAL É O ENDEREÇO DO SERVIDOR SELENIUM PARA QUE O TESTE POSSA SER RODADO
+    - O "BROWSER STACK" É UM SaaS DE SELENIUM
+    - SE QUISERMOS UTILIZAR NOSSOS PRÓPRIOS SERVIDORES DE SELENIUM, HÁ OUTRAS INTERFACES DE TUNEIS PARA SEREM UTILIZADAS, PRECISANDO APENAS
+      FORNECER O "HOST", "PORTA" E "PATH" NO ATRIBUTO "tunnelOptions" NO ARQUIVO DE CONFIGURAÇÃO "intern.js"
+
+# REPORTS
+  - UTILIZAR ELES PELA LINHA DE COMANDO DÃO RESULTADOS COMO OS DO "ISTANBUL"
+    GERANDO UMA PASTINHA CHAMADA "HTML-REPORT" (apenas para unit-tests) COM
+    UM ARQUIVO "index.html" PARA VISUALIZAÇÃO
+    > intern-runner config=tests/intern \ reporters=LcovHtml
+
+
+
+
+# OPÇÕES DE FUNCTIONAL TESTS
+# > pesquisa no google: "nightwatch js vs"
+http://stackoverflow.com/questions/35981605/what-is-the-difference-between-nightwatch-js-and-webdriver-io
+
+
+
+----
+# init
+npm init
+
+# create folder structure
+mkdir dist
+
+mkdir src
+mkdir src/app
+touch src/index.html
+
+mkdir tests
+mkdir tests/functional
+mkdir tests/support
+mkdir tests/unit
+touch tests/intern.js
+
+touch .gitignore
+echo "node_modules/" >> .gitignore
+
+
+
+
+
+
+project_root/
+  dist/         – (optional) Built code; mirrors the `src` directory
+  node_modules/ – Node.js dependencies, including Intern
+    intern/
+  src/          – Front-end source code (+ browser dependencies)
+    app/        – Your application code
+    index.html  – Your application entry point
+  tests/        – Intern tests
+    functional/ – Functional tests
+    support/    – Test support files
+                  (custom interfaces, reporters, mocks, etc.)
+    unit/       – Unit tests
+    intern.js   – Intern configuration
