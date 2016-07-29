@@ -1,14 +1,26 @@
 // *** EXECUTE IT BY RUNNING
 // $ intern-client config=tests/intern hasToSkipMyTest=true
 // NOTE: "hasToSkipMyTest" is a custom argument provided by us that can be used with "intern.args." internally by our tests
-define(function (require) {
-    const bdd = require("intern!bdd"),
-      intern = require('intern'),
-      registerSuite = require('intern!object'),
-      assert = require('intern/chai!assert'),
-      expect = require('intern/chai!expect'),
-      should = require('intern/chai!should')(); // Notice that "should()" is actually called as a function!
-    const hello = require('app/hello');
+define(
+  [
+    "intern!bdd",
+    "intern",
+    "intern/chai!assert",
+    "intern/chai!expect",
+    "intern/chai!should",
+    "intern/dojo/node!supertest/index",
+    "app/hello"
+  ],
+  function (
+    bdd,
+    intern,
+    assert,
+    expect,
+    should,
+    request,
+    hello
+  ) {
+    should(); // Notice that "should()" is actually called as a function!
 
     bdd.describe("> app/hello.js - FIRST_TEST_SUITE", function() {
       // *** DECLARING VARIABLES THAT WILL HOLD VALUES THAT WILL BE MODIFIED BY TESTS
@@ -80,6 +92,28 @@ define(function (require) {
         expect(testThatWillFail).to.equal("bar");
       });
 
+      bdd.it("Asynchronous test", function () {
+        // http://www.mocky.io/v2/579b64ea110000b01fcb776c
+        let dfd = this.async(),
+          expectedResponseBody = {
+            "user": {
+              "id": 1,
+              "name": "Leonardo Sarmento de Castro"
+            }
+          };
+
+        request("http://www.mocky.io/")
+          .get("v2/579b64ea110000b01fcb776c")
+          .then(function(response) {
+            try {
+              expect(response.body).to.be.deep.equal(expectedResponseBody);
+            } catch(error) {
+              dfd.reject(error);
+            }
+
+            dfd.resolve();
+          });
+      });
 
       // *** SUB-SUITE OF TESTS (declare it as a object, not a function as done with tests)
       bdd.describe("> app/hello.js - NESTED_TEST_SUITE", function() {

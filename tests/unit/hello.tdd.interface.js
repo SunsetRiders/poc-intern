@@ -1,14 +1,26 @@
 // *** EXECUTE IT BY RUNNING
 // $ intern-client config=tests/intern hasToSkipMyTest=true
 // NOTE: "hasToSkipMyTest" is a custom argument provided by us that can be used with "intern.args." internally by our tests
-define(function (require) {
-    const tdd = require("intern!tdd"),
-      intern = require('intern'),
-      registerSuite = require('intern!object'),
-      assert = require('intern/chai!assert'),
-      expect = require('intern/chai!expect'),
-      should = require('intern/chai!should')(); // Notice that "should()" is actually called as a function!
-    const hello = require('app/hello');
+define(
+  [
+    "intern!tdd",
+    "intern",
+    "intern/chai!assert",
+    "intern/chai!expect",
+    "intern/chai!should",
+    "intern/dojo/node!supertest/index",
+    "app/hello"
+  ],
+  function (
+    tdd,
+    intern,
+    assert,
+    expect,
+    should,
+    request,
+    hello
+  ) {
+    should(); // Notice that "should()" is actually called as a function!
 
     tdd.suite("> app/hello.js - FIRST_TEST_SUITE", function() {
       // *** DECLARING VARIABLES THAT WILL HOLD VALUES THAT WILL BE MODIFIED BY TESTS

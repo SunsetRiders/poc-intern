@@ -45,12 +45,11 @@ define({
 	// <https://theintern.github.io/intern/#option-useLoader> for more information.
 	loaderOptions: {
 		// Packages that should be registered with the loader in each testing environment
-		packages: [
-
-		]
+		packages: []
 	},
 
 	// Unit test suite(s) to run in each browser
+	// [ "tests/unit/hello.bdd.interface", "tests/unit/hello.object.interface", "tests/unit/hello.tdd.interface" ]
 	suites: [ "tests/unit/hello.bdd.interface", "tests/unit/hello.object.interface", "tests/unit/hello.tdd.interface" ],
 
 	// Functional test suite(s) to execute against each browser once unit tests are completed

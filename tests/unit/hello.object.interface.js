@@ -3,17 +3,24 @@
 // NOTE: "hasToSkipMyTest" is a custom argument provided by us that can be used with "intern.args." internally by our tests
 define(
   [
-    "require",
-    "intern/dojo/node!supertest/index"
+    "intern",
+    "intern!object",
+    "intern/chai!assert",
+    "intern/chai!expect",
+    "intern/chai!should",
+    "intern/dojo/node!supertest/index",
+    "app/hello"
   ],
-  function (require, supertest) {
-    const intern = require('intern'),
-      registerSuite = require('intern!object'),
-      assert = require('intern/chai!assert'),
-      expect = require('intern/chai!expect'),
-      should = require('intern/chai!should')(), // Notice that "should()" is actually called as a function!
-      request = supertest;
-    const hello = require('app/hello');
+  function (
+    intern,
+    registerSuite,
+    assert,
+    expect,
+    should,
+    request,
+    hello
+  ) {
+    should(); // Notice that "should()" is actually called as a function!
 
     registerSuite(function() {
       // *** DECLARING VARIABLES THAT WILL HOLD VALUES THAT WILL BE MODIFIED BY TESTS
