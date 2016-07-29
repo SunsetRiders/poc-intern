@@ -11,6 +11,10 @@
   "homepage": "http://theintern.io/",
   "devDependencies": {
     "intern": "^3.2.3",
+    "nock": "^8.0.0",
     "supertest": "^1.2.0"
+  },
+  "dependencies": {
+    "jquery": "^3.1.0"
   }
 }

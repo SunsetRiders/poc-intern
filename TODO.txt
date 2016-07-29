@@ -40,7 +40,8 @@ TODO:
     > intern-runner config=tests/intern \ reporters=LcovHtml
 
 
-
+# DOCUMENTAÇÃO DOS MÉTODOS DE TESTE FUNCIONAL: leadfoot
+https://theintern.github.io/leadfoot/module-leadfoot_Command.html
 
 # OPÇÕES DE FUNCTIONAL TESTS
 # > pesquisa no google: "nightwatch js vs"

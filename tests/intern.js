@@ -25,7 +25,7 @@ define({
 	// 	{ browserName: 'safari', version: '8', platform: 'MAC' }
 	// ],
 	environments: [
-		{ browserName: 'chrome', version: '39', platform: [ 'WINDOWS', 'MAC' ] }
+		{ browserName: 'phantomjs' }
 	],
 
 	// Maximum number of simultaneous integration tests that should be executed on the remote WebDriver service
@@ -33,11 +33,15 @@ define({
 
 	// Name of the tunnel class to use for WebDriver tests.
 	// See <https://theintern.github.io/intern/#option-tunnel> for built-in options
-	tunnel: 'BrowserStackTunnel',
+	// tunnel: 'BrowserStackTunnel',
+	// tunnelOptions: {
+  //       username: 'leonardosarmento1',
+  //       accessKey: 'k5UBaahZx3C2guVRdkME'
+  //   },
+	tunnel: "NullTunnel",
 	tunnelOptions: {
-        username: 'leonardosarmento1',
-        accessKey: 'k5UBaahZx3C2guVRdkME'
-    },
+
+	},
 
 	// Configuration options for the module loader; any AMD configuration options supported by the AMD loader in use
 	// can be used here.
@@ -50,10 +54,11 @@ define({
 
 	// Unit test suite(s) to run in each browser
 	// [ "tests/unit/hello.bdd.interface", "tests/unit/hello.object.interface", "tests/unit/hello.tdd.interface" ]
-	suites: [ "tests/unit/hello.bdd.interface", "tests/unit/hello.object.interface", "tests/unit/hello.tdd.interface" ],
+	suites: ["tests/unit/hello.object.interface"],
 
 	// Functional test suite(s) to execute against each browser once unit tests are completed
-	functionalSuites: [ "tests/functional/index.1", "tests/functional/index.2" ],
+	// [ "tests/functional/index.1", "tests/functional/index.2" ]
+	functionalSuites: [ "tests/functional/api-mock" ],
 
 	// A regular expression matching URLs to files that should not be included in code coverage analysis. Set to `true`
 	// to completely disable code coverage.
