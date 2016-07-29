@@ -1,5 +1,9 @@
+// *** EXECUTE IT BY RUNNING
+// $ intern-client config=tests/intern hasToSkipMyTest=true
+// NOTE: "hasToSkipMyTest" is a custom argument provided by us that can be used with "intern.args." internally by our tests
 define(function (require) {
-    const registerSuite = require('intern!object'),
+    const intern = require('intern'),
+      registerSuite = require('intern!object'),
       assert = require('intern/chai!assert'),
       expect = require('intern/chai!expect'),
       should = require('intern/chai!should')(); // Notice that "should()" is actually called as a function!
@@ -17,25 +21,25 @@ define(function (require) {
         setup: function() {
           let setupValue = "";
 
-          setupValue = "[BUILT-IN FUNCTIONS][FIRST_TEST_SUITE] (setup) - Executes before the suite starts, can also be called 'before' instead of 'setup'.";
+          setupValue = "[OBJECT-INTERFACE]   [BUILT-IN FUNCTIONS][FIRST_TEST_SUITE] (setup) - Executes before the suite starts, can also be called 'before' instead of 'setup'.";
           console.log(setupValue);
         },
         teardown: function() {
           let teardownValue = "";
 
-          teardownValue = "[BUILT-IN FUNCTIONS][FIRST_TEST_SUITE] (teardown) - Executes after the suite ends, can also be called 'after' instead of 'teardown'.";
+          teardownValue = "[OBJECT-INTERFACE]   [BUILT-IN FUNCTIONS][FIRST_TEST_SUITE] (teardown) - Executes after the suite ends, can also be called 'after' instead of 'teardown'.";
           console.log(teardownValue);
         },
         beforeEach: function() {
           let beforeEachValue = "";
 
-          beforeEachValue = "[BUILT-IN FUNCTIONS][FIRST_TEST_SUITE] (beforeEach) - Executes before each test.";
+          beforeEachValue = "[OBJECT-INTERFACE]   [BUILT-IN FUNCTIONS][FIRST_TEST_SUITE] (beforeEach) - Executes before each test.";
           console.log(beforeEachValue);
         },
         afterEach: function() {
           let afterEachValue = "";
 
-          afterEachValue = "[BUILT-IN FUNCTIONS][FIRST_TEST_SUITE] (afterEach) - Executes after each test.";
+          afterEachValue = "[OBJECT-INTERFACE]   [BUILT-IN FUNCTIONS][FIRST_TEST_SUITE] (afterEach) - Executes after each test.";
           console.log(afterEachValue);
         },
 
@@ -63,6 +67,15 @@ define(function (require) {
           let helloWithName = hello.greet("Leonardo");
           expect(helloWithName).to.equal("Hello, Leonardo!");
         },
+        "Skipping a test depending on an argument passed by the command line": function() {
+          let testThatWillFail = "foo";
+
+          if(intern.args.hasToSkipMyTest) {
+            this.skip("Reason why this test should be skipped");
+          }
+
+          expect(testThatWillFail).to.equal("bar");
+        },
 
         // *** SUB-SUITE OF TESTS (declare it as a object, not a function as done with tests)
         "Sub-suite of tests name": {
@@ -72,25 +85,25 @@ define(function (require) {
           setup: function() {
             let nestedTestSuite_setupValue = "";
 
-            nestedTestSuite_setupValue = "[BUILT-IN FUNCTIONS]  [NESTED_TEST_SUITE] (setup) - Executes before the suite starts, can also be called 'before' instead of 'setup'.";
+            nestedTestSuite_setupValue = "[OBJECT-INTERFACE]    [BUILT-IN FUNCTIONS]  [NESTED_TEST_SUITE] (setup) - Executes before the suite starts, can also be called 'before' instead of 'setup'.";
             console.log(nestedTestSuite_setupValue);
           },
           teardown: function() {
             let nestedTestSuite_teardownValue = "";
 
-            nestedTestSuite_teardownValue = "[BUILT-IN FUNCTIONS]  [NESTED_TEST_SUITE] (teardown) - Executes after the suite ends, can also be called 'after' instead of 'teardown'.";
+            nestedTestSuite_teardownValue = "[OBJECT-INTERFACE]   [BUILT-IN FUNCTIONS]  [NESTED_TEST_SUITE] (teardown) - Executes after the suite ends, can also be called 'after' instead of 'teardown'.";
             console.log(nestedTestSuite_teardownValue);
           },
           beforeEach: function() {
             let nestedTestSuite_beforeEachValue = "";
 
-            nestedTestSuite_beforeEachValue = "[BUILT-IN FUNCTIONS]  [NESTED_TEST_SUITE] (beforeEach) - Executes before each test.";
+            nestedTestSuite_beforeEachValue = "[OBJECT-INTERFACE]   [BUILT-IN FUNCTIONS]  [NESTED_TEST_SUITE] (beforeEach) - Executes before each test.";
             console.log(nestedTestSuite_beforeEachValue);
           },
           afterEach: function() {
             let nestedTestSuite_afterEachValue = "";
 
-            nestedTestSuite_afterEachValue = "[BUILT-IN FUNCTIONS]  [NESTED_TEST_SUITE] (afterEach) - Executes after each test.";
+            nestedTestSuite_afterEachValue = "[OBJECT-INTERFACE]   [BUILT-IN FUNCTIONS]  [NESTED_TEST_SUITE] (afterEach) - Executes after each test.";
             console.log(nestedTestSuite_afterEachValue);
           },
 
