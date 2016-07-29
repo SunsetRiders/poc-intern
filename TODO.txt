@@ -10,8 +10,12 @@
 - custom interfaces
   > torna possível a utilização de interface de testes de outros frameworks pra que você não tenha que reescrever os testes já existentes
   em outros frameworks (ex: jasmine, java, etc..)
+- asynchronous tests
+  > Resolving the promise indicates a passing test, and rejecting the promise indicates a failed test.
+  > NOTE: The test will also fail if the promise is not fulfilled within the timeout of the test (the default is 30 seconds; set this.timeout to change the value).
 
 TODO:
+- UTILIZAR O "NOCK" EM UM FUNCTIONAL TEST ACESSANDO O HTTP-GET DO MOCKY.IO E VER SE ELE INTERCEPTA A RESPOSTA!
 - INTERFACES #TDD E #BDD
   - SE EU UTILIZAR AS INTERFACES DE #TDD E #BDD, PRECISO ESPECIFICAR AS SUITES DE TESTE NO ARQUIVO DE CONFIGURAÇÃO?
   - SKIP TESTS

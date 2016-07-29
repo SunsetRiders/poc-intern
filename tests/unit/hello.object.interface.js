@@ -1,12 +1,18 @@
 // *** EXECUTE IT BY RUNNING
 // $ intern-client config=tests/intern hasToSkipMyTest=true
 // NOTE: "hasToSkipMyTest" is a custom argument provided by us that can be used with "intern.args." internally by our tests
-define(function (require) {
+define(
+  [
+    "require",
+    "intern/dojo/node!supertest/index"
+  ],
+  function (require, supertest) {
     const intern = require('intern'),
       registerSuite = require('intern!object'),
       assert = require('intern/chai!assert'),
       expect = require('intern/chai!expect'),
-      should = require('intern/chai!should')(); // Notice that "should()" is actually called as a function!
+      should = require('intern/chai!should')(), // Notice that "should()" is actually called as a function!
+      request = supertest;
     const hello = require('app/hello');
 
     registerSuite(function() {
@@ -75,6 +81,28 @@ define(function (require) {
           }
 
           expect(testThatWillFail).to.equal("bar");
+        },
+        "Asynchronous test": function() {
+          // http://www.mocky.io/v2/579b64ea110000b01fcb776c
+          let dfd = this.async(),
+            expectedResponseBody = {
+              "user": {
+                "id": 1,
+                "name": "Leonardo Sarmento de Castro"
+              }
+            };
+
+          request("http://www.mocky.io/")
+            .get("v2/579b64ea110000b01fcb776c")
+            .then(function(response) {
+              try {
+                expect(response.body).to.be.deep.equal(expectedResponseBody);
+              } catch(error) {
+                dfd.reject(error);
+              }
+
+              dfd.resolve();
+            });
         },
 
         // *** SUB-SUITE OF TESTS (declare it as a object, not a function as done with tests)

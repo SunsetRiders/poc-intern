@@ -10,6 +10,7 @@
   "bugs": "https://github.com/theintern/intern-tutorial/issues",
   "homepage": "http://theintern.io/",
   "devDependencies": {
-    "intern": "^3.2.3"
+    "intern": "^3.2.3",
+    "supertest": "^1.2.0"
   }
 }
