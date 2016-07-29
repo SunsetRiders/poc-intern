@@ -49,7 +49,7 @@ define({
 	},
 
 	// Unit test suite(s) to run in each browser
-	suites: [ "tests/unit/hello.object.interface", "tests/unit/hello.tdd.interface" ],
+	suites: [ "tests/unit/hello.bdd.interface", "tests/unit/hello.object.interface", "tests/unit/hello.tdd.interface" ],
 
 	// Functional test suite(s) to execute against each browser once unit tests are completed
 	functionalSuites: [ "tests/functional/index.1", "tests/functional/index.2" ],
