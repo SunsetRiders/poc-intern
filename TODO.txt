@@ -1,4 +1,4 @@
-- Não implementa o "BDD" style de "describe, it" e sim um "registerSuite" como se fosse um objeto javascript
+ - Não implementa o "BDD" style de "describe, it" e sim um "registerSuite" como se fosse um objeto javascript
 # IMPLEMENTA BDD/TDD SIM!
   https://theintern.github.io/intern/#interface-overview
 
@@ -6,11 +6,17 @@
 - Lento, mas não sei se é por causa do Tunnel utilizado (browserstack)
 
 
-
+- grunt, gulp integration
+- custom interfaces
+  > torna possível a utilização de interface de testes de outros frameworks pra que você não tenha que reescrever os testes já existentes
+  em outros frameworks (ex: jasmine, java, etc..)
 
 TODO:
 - INTERFACES #TDD E #BDD
   - SE EU UTILIZAR AS INTERFACES DE #TDD E #BDD, PRECISO ESPECIFICAR AS SUITES DE TESTE NO ARQUIVO DE CONFIGURAÇÃO?
+  - SKIP TESTS
+  - USING CUSTOM ARGUMENTS (COMMAND LINE ARGUMENTS INSIDE THE TESTS)
+
 - QUAL QUE É A DO TUNNEL ?
 - O QUE SÃO ESSES REPORTS
   - SÓ DÁ PRA USAR PELA LINHA DE COMANDO OU NO CONFIGURATION FILE TAMBÉM?
