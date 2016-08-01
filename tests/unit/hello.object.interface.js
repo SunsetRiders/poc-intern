@@ -9,7 +9,6 @@ define(
     "intern/chai!expect",
     "intern/chai!should",
     "intern/dojo/node!supertest/index",
-    "intern/dojo/node!nock/index",
     "intern/dojo/node!http",
     "app/hello"
   ],
@@ -20,7 +19,6 @@ define(
     expect,
     should,
     request,
-    nock,
     http,
     hello
   ) {
@@ -93,32 +91,8 @@ define(
 
           expect(testThatWillFail).to.equal("bar");
         },
-        // "Asynchronous test": function() {
-        //   // http://www.mocky.io/v2/579b64ea110000b01fcb776c
-        //   let dfd = this.async(),
-        //     expectedResponseBody = {
-        //       "user": {
-        //         "id": 1,
-        //         "name": "Leonardo Sarmento de Castro"
-        //       }
-        //     };
-        //   console.log("qqqqqq");
-        //   request("http://www.mocky.io/")
-        //     .get("v2/579b64ea110000b01fcb776c")
-        //     .then(function(response) {
-        //       try {
-        //         expect(response.body).to.be.deep.equal(expectedResponseBody);
-        //       } catch(error) {
-        //         console.log("BBBBBBBB");
-        //         dfd.reject(error);
-        //       }
-        //
-        //       dfd.resolve();
-        //     });
-        // },
-        "nock test": function () {
-          // TODO:
-          // http://www.mocky.io/v2/579b9d71100000b905dc8a8d
+        "Asynchronous test": function() {
+          // http://www.mocky.io/v2/579b64ea110000b01fcb776c
           let dfd = this.async(),
             expectedResponseBody = {
               "user": {
@@ -127,24 +101,13 @@ define(
               }
             };
 
-          nock("http://www.mocky.io/")
-            .get("v2/579b9d71100000b905dc8a8d")
-            .reply(
-              200,
-              {
-                user: {
-                  id: 1,
-                  name: "Leonardo Sarmento de Castro"
-                }
-              }
-            );
-
           request("http://www.mocky.io/")
-            .get("v2/579b9d71100000b905dc8a8d")
+            .get("v2/579b64ea110000b01fcb776c")
             .then(function(response) {
               try {
                 expect(response.body).to.be.deep.equal(expectedResponseBody);
               } catch(error) {
+                console.log("BBBBBBBB");
                 dfd.reject(error);
               }
 

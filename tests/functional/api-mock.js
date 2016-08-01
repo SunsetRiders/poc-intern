@@ -18,19 +18,6 @@ define(
   ) {
     bdd.describe("test", function() {
       bdd.it("clicking", function () {
-        nock("http://www.mocky.io/")
-          .get("v2/579b9d71100000b905dc8a8d")
-          .reply(
-            200,
-            {
-              user: {
-                id: 999,
-                name: "Juliano"
-              }
-            }
-          );
-
-
         return this.remote
           .get(require.toUrl("index.html"))
           .findById("btnApiIntegration")
