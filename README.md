@@ -7,8 +7,8 @@
 - [Running the "unit test runner"](https://github.com/leonardosarmentocastro/poc-theintern#running-the-unit-test-runner)
 - [Generating unit test code coverage reporters](https://github.com/leonardosarmentocastro/poc-theintern#generating-unit-test-code-coverage)
 - [Running headless browser functional tests](https://github.com/leonardosarmentocastro/poc-theintern#running-headless-browser-functional-tests)
-    - [POC project walkthrough](https://github.com/leonardosarmentocastro/poc-theintern#poc-project-walkthrough)
-    - [Intern.js walkthrough](https://github.com/leonardosarmentocastro/poc-theintern#internjs-walkthrough)
+    - [POC project walkthrough](https://github.com/leonardosarmentocastro/poc-theintern#--poc-project-walkthrough)
+    - [Intern.js walkthrough](https://github.com/leonardosarmentocastro/poc-theintern#--internjs-walkthrough)
 - [Documentation](https://github.com/leonardosarmentocastro/poc-theintern#documetation)
     - [Functional test methods](https://github.com/leonardosarmentocastro/poc-theintern#functional-test-methods)
     - [Unit test assertion library](https://github.com/leonardosarmentocastro/poc-theintern#unit-test-assertion-library)
@@ -99,7 +99,8 @@ There is a pre-defined one by the Intern team at the dependency folder, you can 
 
     6.5 The next steps to run your functional tests are on the "Running headless browser functional tests" section
 
-    **Optional steps COMPLETE!**
+**Optional steps COMPLETE!**
+
 ------
 ## Running the "unit test runner"
 Simple run
