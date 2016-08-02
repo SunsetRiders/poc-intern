@@ -25,7 +25,7 @@ define({
 	// 	{ browserName: 'safari', version: '8', platform: 'MAC' }
 	// ],
 	environments: [
-		{ browserName: 'phantomjs' }
+		{ browserName: 'chrome', version: '39', platform: [ 'MAC' ] }
 	],
 
 	// Maximum number of simultaneous integration tests that should be executed on the remote WebDriver service
@@ -58,7 +58,7 @@ define({
 
 	// Functional test suite(s) to execute against each browser once unit tests are completed
 	// [ "tests/functional/index.1", "tests/functional/index.2" ]
-	functionalSuites: [ "tests/functional/index.functional.test.js", "tests/functional/index.1.js", "tests/functional/index.2.js" ],
+	functionalSuites: [ "tests/functional/index.functional.test.js" ],
 
 	// A regular expression matching URLs to files that should not be included in code coverage analysis. Set to `true`
 	// to completely disable code coverage.
