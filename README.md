@@ -1,16 +1,17 @@
-# POC - Intern.js
+# POC - The Intern
 > A "proof of concept" to guide through this Unit and functional test library
+> https://theintern.github.io/
 
 ## What Will be covered?
-- [First steps when beggining a new project]()
-- [Running the "unit test runner"]()
-- [Generating unit test code coverage reporters]()
-- [Running headless browser functional tests]()
-    - [POC project walkthrough]()
-    - [ntern.js walkthrough]()
-- Documentation
-    - [Functional test methods]()
-    - [Unit test assertion library]()
+- [First steps when beggining a new project](https://github.com/leonardosarmentocastro/poc-theintern)
+- [Running the "unit test runner"](https://github.com/leonardosarmentocastro/poc-theintern)
+- [Generating unit test code coverage reporters](https://github.com/leonardosarmentocastro/poc-theintern)
+- [Running headless browser functional tests](https://github.com/leonardosarmentocastro/poc-theintern)
+    - [POC project walkthrough](https://github.com/leonardosarmentocastro/poc-theintern)
+    - [Intern.js walkthrough](https://github.com/leonardosarmentocastro/poc-theintern)
+- [Documentation](https://github.com/leonardosarmentocastro/poc-theintern)
+    - [Functional test methods](https://github.com/leonardosarmentocastro/poc-theintern)
+    - [Unit test assertion library](https://github.com/leonardosarmentocastro/poc-theintern)
 
 
 -----
