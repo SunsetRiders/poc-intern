@@ -68,7 +68,7 @@ There is a pre-defined one by the Intern team at the dependency folder, you can 
     suites: [ "tests/unit/hello.bdd.interface", "tests/unit/hello.tdd.interface" ],
     ```
 
-    5.5 Run the "unit test runner"
+    5.5 [Run the "unit test runner"](https://github.com/leonardosarmentocastro/poc-theintern#running-the-unit-test-runner)
 
     **First steps COMPLETE!**
 
