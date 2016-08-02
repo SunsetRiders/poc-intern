@@ -55,26 +55,6 @@ define(
 
             return test;
           });
-
-          // bdd.it("should disable it until it gets a response from the server", function() {
-          //   var test = this.remote
-          //     .get(indexPageUrl)
-          //       .findById(btnUseApiEmail)
-          //       .click()
-          //       .getAttribute("disabled")
-          //         .then(function(isDisabled) {
-          //           expect(isDisabled).to.be.true;
-          //         })
-          //       .sleep(5000)
-          //       .getAttribute("disabled")
-          //         .then(function(isDisabled) {
-          //           console.log("bbb");
-          //           expect(isDisabled).to.be.false;
-          //         })
-          //         .end();
-          //
-          //   return test;
-          // });
         });
 
         bdd.describe('clicking on "sign in" button', function () {
