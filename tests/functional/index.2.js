@@ -13,6 +13,9 @@ define(function (require) {
         name: 'index',
 
         "Any name you want to": function () {
+          // > .get(require.toUrl('index.html'))
+          // "require.toUrl" access static files without the need of a real webserver
+
           return this.remote
                   .get(require.toUrl('index.html'))
                   .setFindTimeout(5000)

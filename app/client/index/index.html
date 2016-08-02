@@ -27,7 +27,7 @@
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="txtPassword" class="form-control" placeholder="Password" required>
         <button id="btnUseApiEmail" type="button" value="useApiEmail" use="" api="" email="" class="btn btn-sm btn-secondary btn-block">Use API email</button>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button id="btnSignIn" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
 
     </div> <!-- /container -->
@@ -38,7 +38,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>
       var mockApiUrl = "http://www.mocky.io/v2/579fa2452c0000811c9e1093",
-        btnUseApiEmail = "#btnUseApiEmail";
+        btnUseApiEmail = "#btnUseApiEmail",
+        formSignIn = "form.form-signin",
+        txtEmail = "#txtEmail",
+        txtPassword = "#txtPassword",
+        view = {
+          goTo: function() {}
+        };
 
       $(btnUseApiEmail).click(function(event) {
         $(btnUseApiEmail).attr("disabled", true);
@@ -48,16 +54,34 @@
         })
         .done(function( data ) {
           if ( console && console.log ) {
-            $("#txtEmail").val(data.user.email);
+            $(txtEmail).val(data.user.email);
           }
         })
         .fail(function(jqXHR, textStatus, errorThrown) {
-          $("#txtEmail").text("error@error.com");
+          $(txtEmail).val("error@error.com");
         })
         .complete(function() {
           $(btnUseApiEmail).removeAttr("disabled");
         });
       });
+
+      $(formSignIn).submit(function(event) {
+        var email = $(txtEmail).val(),
+        password = $(txtPassword).val();
+
+        event.preventDefault();
+
+        if(email === "admin@daitangroup.com" && password === "123") {
+          window.location.replace("success");
+        } else {
+          window.location.replace("error");
+        }
+      });
+
+      // @functions
+      view.goTo = function(url) {
+          window.location.href("http://localhost:8080/" + url);
+      };
     </script>
   </body>
 </html>

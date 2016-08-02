@@ -1,7 +1,7 @@
 // *** Different ways to load dependencies under tests
 // Instead of injecting the dependencies under the "define(function (require) { var library = require("library"); //... })"
 // define the required libraries on a array by providing their paths of loading
-// and assign them on the function declaration "function(registerSuite, assert, expect, fs)" 
+// and assign them on the function declaration "function(registerSuite, assert, expect, fs)"
 
 define(
   [
@@ -16,6 +16,9 @@ define(
         name: 'index',
 
         'greeting form': function () {
+          // > .get(require.toUrl('index.html'))
+          // "require.toUrl" access static files without the need of a real webserver
+
           return this.remote
                   .get(require.toUrl('index.html'))
                   .setFindTimeout(5000)
@@ -43,9 +46,3 @@ define(
         }
     });
 });
-
-// .takeScreenshot()
-//   .then(function(data) {
-//     fs.writeFileSync('/home/lscastro/workspace/leonardosarmentocastro/intern-tutorial/screenshot.png', data, "base64");
-//   })
-//   .end()

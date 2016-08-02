@@ -13,6 +13,7 @@ define(
   ) {
     bdd.describe("- IndexPage", function() {
       var indexPageUrl = "http://localhost:8080",
+      btnSignIn = "btnSignIn",
       btnUseApiEmail = "btnUseApiEmail",
       txtEmail = "input#txtEmail",
       txtPassword = "input#txtPassword";
@@ -74,6 +75,60 @@ define(
           //
           //   return test;
           // });
+        });
+
+        bdd.describe('clicking on "sign in" button', function () {
+          bdd.it("go to the success page for user admin@daitangroup.com/123", function() {
+            var test = this.remote
+              .get(indexPageUrl)
+                .findByCssSelector(txtEmail)
+                  .type("admin@daitangroup.com")
+                  .end()
+                .findByCssSelector(txtPassword)
+                  .type("123")
+                  .end()
+                .takeScreenshot()
+                  .then(function(data) {
+                    fs.writeFileSync('/home/lscastro/workspace/leonardosarmentocastro/intern-tutorial/tests/resources/screenshots/index.functional.sign-in-success.png', data, "base64");
+                  })
+                  .end()
+                .findById(btnSignIn)
+                  .click()
+                  .end()
+                .getCurrentUrl()
+                  .then(function(currentUrl) {
+                    expect(currentUrl).to.contain("/success");
+                  })
+                  .end();
+
+            return test;
+          });
+
+          bdd.it("go to the error page for other email/password combinations", function() {
+            var test = this.remote
+              .get(indexPageUrl)
+                .findByCssSelector(txtEmail)
+                  .type("fooUser@email.com")
+                  .end()
+                .findByCssSelector(txtPassword)
+                  .type("789")
+                  .end()
+                .takeScreenshot()
+                  .then(function(data) {
+                    fs.writeFileSync('/home/lscastro/workspace/leonardosarmentocastro/intern-tutorial/tests/resources/screenshots/index.functional.sign-in-wrong.png', data, "base64");
+                  })
+                  .end()
+                .findById(btnSignIn)
+                  .click()
+                  .end()
+                .getCurrentUrl()
+                  .then(function(currentUrl) {
+                    expect(currentUrl).to.contain("/error");
+                  })
+                  .end();
+
+            return test;
+          });
         });
 
         bdd.describe("must have", function() {

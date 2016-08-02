@@ -12,12 +12,12 @@ app.get('/', function(req, res) {
 
 // @index route
 app.get('/success', function(req, res) {
-    res.sendFile(path.join(__dirname + '/../client/index/success.html'));
+    res.sendFile(path.join(__dirname + '/../client/success/success.html'));
 });
 
 // @error route
-app.get('/success', function(req, res) {
-    res.sendFile(path.join(__dirname + '/../client/index/error.html'));
+app.get('/error', function(req, res) {
+    res.sendFile(path.join(__dirname + '/../client/error/error.html'));
 });
 
 
