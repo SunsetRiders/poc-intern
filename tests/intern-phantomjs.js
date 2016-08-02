@@ -54,11 +54,11 @@ define({
 
 	// Unit test suite(s) to run in each browser
 	// [ "tests/unit/hello.bdd.interface", "tests/unit/hello.object.interface", "tests/unit/hello.tdd.interface" ]
-	suites: [ "tests/unit/hello.bdd.interface", "tests/unit/hello.object.interface", "tests/unit/hello.tdd.interface" ],
+	suites: [],
 
 	// Functional test suite(s) to execute against each browser once unit tests are completed
-	// [ "tests/functional/index.functional.test.js" ]
-	functionalSuites: [],
+	// [ "tests/functional/index.1", "tests/functional/index.2" ]
+	functionalSuites: [ "tests/functional/index.functional.test.js", "tests/functional/index.1.js", "tests/functional/index.2.js" ],
 
 	// A regular expression matching URLs to files that should not be included in code coverage analysis. Set to `true`
 	// to completely disable code coverage.
