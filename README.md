@@ -1,6 +1,5 @@
 # POC - The Intern
-> A "proof of concept" to guide through this Unit and functional test library
-> > https://theintern.github.io/
+A "proof of concept" to guide through this Unit and functional test library - https://theintern.github.io/
 
 ## What Will be covered?
 - [First steps when beggining a new project](https://github.com/leonardosarmentocastro/poc-theintern#first-steps-when-beginning-a-new-project)
@@ -25,7 +24,7 @@
     ```sh
     $ npm install intern-client -g
     ```
-    > NOTE: Installing this package will enable the use of "intern-client" and "intern-runner" on your terminal.
+    *NOTE:* Installing this package will enable the use of "intern-client" and "intern-runner" on your terminal.
 
 
 3. Create a folder called "tests" under your project application root folder
@@ -70,11 +69,12 @@ There is a pre-defined one by the Intern team at the dependency folder, you can 
 
     5.5 [Run the "unit test runner"](https://github.com/leonardosarmentocastro/poc-theintern#running-the-unit-test-runner)
 
-    **First steps COMPLETE!**
+**First steps COMPLETE!**
 
-> Optional steps
+### Optional steps
 
 6. Create a functional test, add to the "intern.js" configuration file and run it on a headless browser
+    
     6.1. Create a functional test file
     ```sh
     $ cd your-project/ # if you haven't done so
@@ -122,7 +122,6 @@ if(intern.args.hasToSkipMyTest) {
 
 **Running the "unit test runner" COMPLETE!**
 
-
 ## Generating unit test code coverage reporters
 Run the "intern-client" with a "reporters" parameters
 
@@ -152,11 +151,11 @@ https://theintern.github.io/intern/#reporter-lcov
 
 
 ## Running headless browser functional tests
-> There are two small steps to accomplish this:
+**There are two small steps to accomplish this:**
 1. The "POC project walkthrough"
 2. The "Intern.js walkthrough"
 
-### - POC project walkthrough
+### POC project walkthrough
 1. Start the simple "node.js" server
 
     1.1. Navigate to the project root folder
@@ -220,12 +219,10 @@ https://theintern.github.io/intern/#reporter-lcov
 
 **Running headless browser tests COMPLETE!**
 
-> NOTE:
-I notice that the "phantomjs" tries to run all your "unit" and "functional" tests when calling the "intern-runner".
+*NOTE:* I notice that the "phantomjs" tries to run all your "unit" and "functional" tests when calling the "intern-runner".
 
-> So if you want to isolate your functional tests, create a separate "intern.js" configuration file called "intern-phantomjs.js" and
+So if you want to isolate your functional tests, create a separate "intern.js" configuration file called "intern-phantomjs.js" and
 specify only "functionalSuites" and leave unit test "suites" empty.
-
 
 ## Documentation
 ### - Functional test methods
