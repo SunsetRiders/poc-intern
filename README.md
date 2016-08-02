@@ -5,16 +5,16 @@
 ## What Will be covered?
 - [First steps when beggining a new project](https://github.com/leonardosarmentocastro/poc-theintern#first-steps-when-beginning-a-new-project)
 - [Running the "unit test runner"](https://github.com/leonardosarmentocastro/poc-theintern#running-the-unit-test-runner)
-- [Generating unit test code coverage reporters](https://github.com/leonardosarmentocastro/poc-theintern#generating-unit-test-code-coverage)
+- [Generating unit test code coverage reporters](https://github.com/leonardosarmentocastro/poc-theintern#generating-unit-test-code-coverage-reporters)
 - [Running headless browser functional tests](https://github.com/leonardosarmentocastro/poc-theintern#running-headless-browser-functional-tests)
     - [POC project walkthrough](https://github.com/leonardosarmentocastro/poc-theintern#--poc-project-walkthrough)
     - [Intern.js walkthrough](https://github.com/leonardosarmentocastro/poc-theintern#--internjs-walkthrough)
-- [Documentation](https://github.com/leonardosarmentocastro/poc-theintern#documetation)
-    - [Functional test methods](https://github.com/leonardosarmentocastro/poc-theintern#functional-test-methods)
-    - [Unit test assertion library](https://github.com/leonardosarmentocastro/poc-theintern#unit-test-assertion-library)
+- [Documentation](https://github.com/leonardosarmentocastro/poc-theintern#documentation)
+    - [Functional test methods](https://github.com/leonardosarmentocastro/poc-theintern#--functional-test-methods)
+    - [Unit test assertion library](https://github.com/leonardosarmentocastro/poc-theintern#--unit-test-assertion-library)
 
 
------
+
 ## First steps when beginning a new project
 1. Install intern as a dependency to your project
     ```sh
@@ -72,7 +72,7 @@ There is a pre-defined one by the Intern team at the dependency folder, you can 
 
     **First steps COMPLETE!**
 
-    > Optional steps
+> Optional steps
 
 6. Create a functional test, add to the "intern.js" configuration file and run it on a headless browser
     6.1. Create a functional test file
@@ -101,7 +101,7 @@ There is a pre-defined one by the Intern team at the dependency folder, you can 
 
 **Optional steps COMPLETE!**
 
-------
+
 ## Running the "unit test runner"
 Simple run
 ```sh
@@ -122,7 +122,7 @@ if(intern.args.hasToSkipMyTest) {
 
 **Running the "unit test runner" COMPLETE!**
 
-----------
+
 ## Generating unit test code coverage reporters
 Run the "intern-client" with a "reporters" parameters
 
@@ -150,7 +150,7 @@ reporters=LcovHtml
 For any extra information, check out the documentation:
 https://theintern.github.io/intern/#reporter-lcov
 
--------
+
 ## Running headless browser functional tests
 > There are two small steps to accomplish this:
 1. The "POC project walkthrough"
@@ -226,12 +226,10 @@ I notice that the "phantomjs" tries to run all your "unit" and "functional" test
 > So if you want to isolate your functional tests, create a separate "intern.js" configuration file called "intern-phantomjs.js" and
 specify only "functionalSuites" and leave unit test "suites" empty.
 
-------
+
 ## Documentation
 ### - Functional test methods
-- **Leadfoot**:
-https://theintern.github.io/leadfoot/module-leadfoot_Command.html
+- [**Leadfoot**](https://theintern.github.io/leadfoot/module-leadfoot_Command.html)
 
 ### - Unit test assertion library
-- **Chai.js**
-http://chaijs.com/api/
+- [**Chai.js**](http://chaijs.com/api/)
