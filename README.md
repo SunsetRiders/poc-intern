@@ -12,8 +12,6 @@ A "proof of concept" to guide through this Unit and functional test library - ht
     - [Functional test methods](https://github.com/leonardosarmentocastro/poc-theintern#--functional-test-methods)
     - [Unit test assertion library](https://github.com/leonardosarmentocastro/poc-theintern#--unit-test-assertion-library)
 
-
-
 ## First steps when beginning a new project
 1. Install intern as a dependency to your project
     ```sh
@@ -44,29 +42,30 @@ There is a pre-defined one by the Intern team at the dependency folder, you can 
 
 5. After creating a test file on the "unit" or "functional" folder, we need to registry this test suit to be run by Intern
 (otherwise this test will be ignored by the test runner)
-  5.1. Assuming that you created a test file on
+
+    5.1. Assuming that you created a test file on
       ```sh
       $ cd your-project/ # if you haven't done so
       $ touch tests/unit/hello.bdd.interface.js
       $ touch tests/unit/hello.tdd.interface.js
       ```
-
+    
     5.2. Open the previously copied "intern.js" configuration file
     ```sh
     $ vim tests/intern.js # use the text editor of your choice
     ```
-
+    
     5.3 Find the property "suites":
     ```js
     // Unit test suite(s) to run in each browser
     suites: [ /* 'myPackage/tests/foo', 'myPackage/tests/bar' */ ],
     ```
-
+    
     5.4 And add your tests path
     ```js
     suites: [ "tests/unit/hello.bdd.interface", "tests/unit/hello.tdd.interface" ],
     ```
-
+    
     5.5 [Run the "unit test runner"](https://github.com/leonardosarmentocastro/poc-theintern#running-the-unit-test-runner)
 
 **First steps COMPLETE!**
