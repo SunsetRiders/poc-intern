@@ -33,11 +33,11 @@ define({
 
 	// Name of the tunnel class to use for WebDriver tests.
 	// See <https://theintern.github.io/intern/#option-tunnel> for built-in options
-	tunnel: 'BrowserStackTunnel',
-	tunnelOptions: {
-        username: 'leonardosarmento1',
-        accessKey: 'k5UBaahZx3C2guVRdkME'
-    },
+	// tunnel: 'BrowserStackTunnel',
+	// tunnelOptions: {
+  //       username: 'leonardosarmento1',
+  //       accessKey: 'k5UBaahZx3C2guVRdkME'
+  //   },
 	tunnel: "NullTunnel",
 	tunnelOptions: {
 
