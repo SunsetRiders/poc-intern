@@ -3,19 +3,19 @@
 > https://theintern.github.io/
 
 ## What Will be covered?
-- [First steps when beggining a new project](https://github.com/leonardosarmentocastro/poc-theintern)
-- [Running the "unit test runner"](https://github.com/leonardosarmentocastro/poc-theintern)
-- [Generating unit test code coverage reporters](https://github.com/leonardosarmentocastro/poc-theintern)
-- [Running headless browser functional tests](https://github.com/leonardosarmentocastro/poc-theintern)
-    - [POC project walkthrough](https://github.com/leonardosarmentocastro/poc-theintern)
-    - [Intern.js walkthrough](https://github.com/leonardosarmentocastro/poc-theintern)
-- [Documentation](https://github.com/leonardosarmentocastro/poc-theintern)
-    - [Functional test methods](https://github.com/leonardosarmentocastro/poc-theintern)
-    - [Unit test assertion library](https://github.com/leonardosarmentocastro/poc-theintern)
+- [First steps when beggining a new project](https://github.com/leonardosarmentocastro/poc-theintern#first-steps-when-beginning-a-new-project)
+- [Running the "unit test runner"](https://github.com/leonardosarmentocastro/poc-theintern#running-the-unit-test-runner)
+- [Generating unit test code coverage reporters](https://github.com/leonardosarmentocastro/poc-theintern#generating-unit-test-code-coverage)
+- [Running headless browser functional tests](https://github.com/leonardosarmentocastro/poc-theintern#running-headless-browser-functional-tests)
+    - [POC project walkthrough](https://github.com/leonardosarmentocastro/poc-theintern#poc-project-walkthrough)
+    - [Intern.js walkthrough](https://github.com/leonardosarmentocastro/poc-theintern#internjs-walkthrough)
+- [Documentation](https://github.com/leonardosarmentocastro/poc-theintern#documetation)
+    - [Functional test methods](https://github.com/leonardosarmentocastro/poc-theintern#functional-test-methods)
+    - [Unit test assertion library](https://github.com/leonardosarmentocastro/poc-theintern#unit-test-assertion-library)
 
 
 -----
-## First steps when beggining a new project
+## First steps when beginning a new project
 1. Install intern as a dependency to your project
     ```sh
     $ npm install --save-dev intern
